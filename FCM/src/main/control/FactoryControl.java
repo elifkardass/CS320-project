@@ -36,7 +36,7 @@ public class FactoryControl {
         });
     }
 
-    private boolean createAndAddFoodItem() {
+    public boolean createAndAddFoodItem() {
         try {
             // Get values from text fields
             String name = factoryPage.getTextFieldName().getText();

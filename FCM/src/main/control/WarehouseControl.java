@@ -40,7 +40,7 @@ public class WarehouseControl {
         });
     }
 
-    private boolean updateFoodItemWithWarehouseDetails() {
+    public boolean updateFoodItemWithWarehouseDetails() {
         try {
             // Get values from text fields
             String warehouseLocation = warehousePage.getTextFieldName().getText();

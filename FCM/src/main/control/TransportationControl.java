@@ -40,7 +40,7 @@ public class TransportationControl {
         });
     }
 
-    private boolean updateFoodItemWithShippingDetails() {
+    public boolean updateFoodItemWithShippingDetails() {
         try {
             // Get values from text fields
             String transporterCompany = transportationPage.getTextFieldCompanyName().getText();

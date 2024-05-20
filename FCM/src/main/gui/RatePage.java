@@ -133,4 +133,8 @@ public class RatePage extends BaseView {
 	public void setVisible() {
 		frame.setVisible(false);
 	}
+
+    public void setTextFieldCommentFieldText(String s) {
+        commentField.setText(s);
+    }
 }

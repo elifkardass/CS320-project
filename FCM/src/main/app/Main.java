@@ -9,7 +9,7 @@ import gui.MainPage;
 
 public class Main {
 	
-	public static final List<FoodItem> foodList = new ArrayList<>();
+	public static List<FoodItem> foodList = new ArrayList<>();
 	
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {

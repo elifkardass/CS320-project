@@ -68,4 +68,20 @@ public class FactoryPage extends BaseView {
 	public void setVisible() {
 		frame.setVisible(false);
 	}
+
+    public void setTextFieldName(String name) {
+        textFieldName.setText(name);
+    }
+    public void setTextFieldCategory(String category) {
+        textFieldCategory.setText(category);
+    }
+    public void setTextFieldDate(String date) {
+        textFieldDate.setText(date);
+    }
+    public void setTextFieldOrigin(String origin) {
+        textFieldOrigin.setText(origin);
+    }
+    public void setTextFieldPrice(String price) {
+        textFieldPrice.setText(price);
+    }
 }

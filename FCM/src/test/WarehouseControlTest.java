@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import app.*;
 import control.*;
 import gui.*;
+import control.WarehouseControl;
 
 class WarehouseControlTest {
 

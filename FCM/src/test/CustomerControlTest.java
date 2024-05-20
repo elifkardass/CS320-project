@@ -21,7 +21,7 @@ class CustomerControlTest {
         testFoodList.add(new FoodItem("Apple", "Fruit", "2025-12-31", "USA", 1.0));
         Main.foodList = testFoodList; // Assigning the test list to the Main's foodList
 
-        customerPage = new CustomerPage(); // Assuming you have default constructor or setup method
+        customerPage = new CustomerPage(testFoodList,new MainPage()); // Assuming you have default constructor or setup method
         customerControl = new CustomerControl(customerPage);
     }
 
@@ -43,7 +43,7 @@ class CustomerControlTest {
         // Simulate the MainMenu button click
         customerPage.getButtonMain().doClick(); // If you can simulate clicks
         // Check if the CustomerPage is set to non-visible
-        assertFalse(customerPage.isVisible(), "Customer page should be set to non-visible after clicking Main menu.");
+        assertFalse(customerPage.setVisible();, "Customer page should be set to non-visible after clicking Main menu.");
     }
 
     // Simulate the Submit button action when a valid food item is selected
@@ -54,6 +54,6 @@ class CustomerControlTest {
         // Simulate the Submit button click
         customerPage.getButtonSubmit().doClick();
         // Check if the CustomerPage is set to non-visible
-        assertFalse(customerPage.isVisible(), "Customer page should be set to non-visible after submitting a valid food item.");
+        assertFalse(customerPage.setVisible();, "Customer page should be set to non-visible after submitting a valid food item.");
 }
 }

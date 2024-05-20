@@ -87,4 +87,5 @@ public class CustomerPage extends BaseView {
     public MainPage getMainPage() {
         return mainPage;
     }
+
 }
