@@ -5,6 +5,7 @@ import gui.WarehousePage;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
@@ -27,8 +28,12 @@ public class WarehouseControl {
 
                     // Open MainPage
                     MainPage mainPage = new MainPage(); // Create an instance of MainPage
-                    new MainControl(mainPage); // Set up the control for the MainPage
-                    
+                    try {
+                        new MainControl(mainPage); // Set up the control for the MainPage
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex);
+                    }
+
                     warehousePage.setNonVisible();
                 }
             }

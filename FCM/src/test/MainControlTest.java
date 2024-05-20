@@ -5,13 +5,15 @@ import app.*;
 import control.*;
 import gui.*;
 
+import java.sql.SQLException;
+
 class MainControlTest {
 
     MainControl mainControl;
     MainPage mainPage;
 
     @BeforeEach
-    void setUp() {
+    void setUp() throws SQLException {
         mainPage = new MainPage();
         mainControl = new MainControl(mainPage);
     }

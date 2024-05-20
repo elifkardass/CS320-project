@@ -29,7 +29,8 @@ public class PaymentControl {
 
     }
 
-    private boolean checkPaymentMethod(PaymentPage paymentPage) {
+
+    public boolean checkPaymentMethod(PaymentPage paymentPage) {
         String password = new String(paymentPage.getPasswordFieldCardPassword().getPassword());
         String cardNumber = paymentPage.getTextFieldCardNumber().getText();
 

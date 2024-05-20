@@ -1,5 +1,6 @@
 package app;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,11 @@ public class Main {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 MainPage mainPage = new MainPage(); // Create an instance of MainPage
-                new MainControl(mainPage); // Set up the control for the MainPage
+                try {
+                    new MainControl(mainPage); // Set up the control for the MainPage
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }
