@@ -40,7 +40,7 @@ public class CustomerControl {
 
 	}
 
-	private FoodItem findFoodItemByName(String foodName) {
+	public FoodItem findFoodItemByName(String foodName) {
 		for (FoodItem foodItem : Main.foodList) { // Assuming foodList is accessible here
 			if (foodItem.getName().equals(foodName)) {
 				return foodItem;
