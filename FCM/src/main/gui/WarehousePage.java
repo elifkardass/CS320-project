@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 
 public class WarehousePage extends BaseView {
-	
-	private JFrame frame;
+
+    private JFrame frame;
     private JTextField textFieldName;
     private JTextField textFieldCategory;
     private JButton buttonSubmit;
-	
+
     public WarehousePage() {
 
         // frame
@@ -43,7 +43,7 @@ public class WarehousePage extends BaseView {
 
         frame.setVisible(true);
     }
-    
+
     public JTextField getTextFieldName() {
         return textFieldName;
     }
@@ -56,11 +56,11 @@ public class WarehousePage extends BaseView {
         return buttonSubmit;
     }
 
-	public void setNonVisible() {
-		frame.setVisible(false);
-	}
-	
-	public void setVisible() {
-		frame.setVisible(false);
-	}
+    public void setNonVisible() {
+        frame.setVisible(false);
+    }
+
+    public void setVisible() {
+        frame.setVisible(false);
+    }
 }

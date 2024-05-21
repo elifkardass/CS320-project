@@ -7,24 +7,10 @@ import app.Main;
 import gui.CustomerPage;
 import gui.FactoryPage;
 import gui.MainPage;
-import java.sql.*;
 
 public class MainControl {
-    private String connectionUrl;
-    private String connectionUsername;
-    private String connectionPassword;
-    private Connection connection;
-    private Statement stat;
-    private Statement stat2;
 
-    public MainControl(MainPage mainPage) throws SQLException {
-        connectionUrl = "jdbc:mysql://localhost:3306/";
-        connectionUsername = "root";
-        connectionPassword = "_*7A!%HzBg";
-        connection = DriverManager.getConnection(connectionUrl, connectionUsername, connectionPassword);
-        stat =  connection.createStatement();
-        stat2 = connection.createStatement();
-
+    public MainControl(MainPage mainPage) {
         mainPage.getButtonCreate().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

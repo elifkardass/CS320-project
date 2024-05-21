@@ -36,27 +36,23 @@ public class MainPage extends BaseView implements PageView {
     public JButton getButtonCreate() {
         return buttonCreate;
     }
-    
+
     // Method to get the customer button
     public JButton getButtonCustomer() {
         return buttonCustomer;
     }
-    
+
     public void  setNonVisible() {
-    	frame.setVisible(false);
+        frame.setVisible(false);
     }
-    
+
     public void  setVisible() {
-    	frame.setVisible(true);
+        frame.setVisible(true);
     }
 
-	@Override
-	public JButton getButtonSubmit() {
-		// Since no submit button, returns null
-		return null;
-	}
-
-    public boolean isNonVisible() {
-        return !frame.isVisible();
+    @Override
+    public JButton getButtonSubmit() {
+        // Since no submit button, returns null
+        return null;
     }
 }

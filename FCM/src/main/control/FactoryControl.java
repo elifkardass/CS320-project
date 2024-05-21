@@ -25,18 +25,18 @@ public class FactoryControl {
             public void actionPerformed(ActionEvent e) {
                 isCreated = createAndAddFoodItem();
                 System.out.println("Factory Button clicked");
-                
+
                 if (isCreated) {
                     TransportationPage transportationPage = new TransportationPage();
                     new TransportationControl(transportationPage); // Add this line
-                    
+
                     factoryPage.setNonVisible();
                 }
             }
         });
     }
 
-    public boolean createAndAddFoodItem() {
+    private boolean createAndAddFoodItem() {
         try {
             // Get values from text fields
             String name = factoryPage.getTextFieldName().getText();
@@ -44,8 +44,8 @@ public class FactoryControl {
             String expiryDate = factoryPage.getTextFieldDate().getText();
             String origin = factoryPage.getTextFieldOrigin().getText();
             String price = factoryPage.getTextFieldPrice().getText();
-            
-            
+
+
             // Validate inputs
             validateStringField(name, "Name");
             validateStringField(category, "Category");
@@ -67,7 +67,7 @@ public class FactoryControl {
             return false;
         }
     }
-    
+
     private void validateStringField(String field, String fieldName) {
         if (field == null || field.trim().isEmpty()) {
             throw new IllegalArgumentException(fieldName + " cannot be empty.");

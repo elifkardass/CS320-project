@@ -7,21 +7,21 @@ import app.FoodItem;
 import java.awt.*;
 
 public class RatePage extends BaseView {
-	
+
     private JFrame frame;
     private JTextArea detailsArea;
     private JTextField commentField;
     private JComboBox<Integer> ratingDropdown;
     private JButton submitButton;
     private JButton mainMenuButton;
-    
+
     private MainPage mainPage; // reference to MainPage
     private FoodItem foodItem;
 
     public RatePage(FoodItem foodItem, MainPage mainPage) {
-    	
-    	this.mainPage = mainPage;
-    	this.foodItem = foodItem;   	
+
+        this.mainPage = mainPage;
+        this.foodItem = foodItem;
         // frame setup
         frame = new JFrame("Rate " + foodItem.getName());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,10 +79,10 @@ public class RatePage extends BaseView {
         details.append("Food Source: '").append(foodItem.getFoodSource()).append("'\n");
         details.append("Food Destination: '").append(foodItem.getFoodDestination()).append("'\n");
         details.append("Expected Delivery Date: '").append(foodItem.getExpectedDeliveryDate()).append("'\n");
-        
+
         String comment = foodItem.getComment();
         String rating = foodItem.getRating();
-        
+
         if (comment != null && !comment.isEmpty()) {
             details.append("Comment: '").append(comment).append("'\n");
         } else {
@@ -108,15 +108,15 @@ public class RatePage extends BaseView {
     }
 
     // Other methods and getters
-    
+
     public JTextField getTextFieldCommentField() { return commentField; }
-    
+
     public void showMainPage() {
         if (mainPage != null) {
             mainPage.setVisible();
         }
     }
-    
+
     public JComboBox<Integer> getRatingDropdown() {
         return ratingDropdown;
     }
@@ -124,17 +124,13 @@ public class RatePage extends BaseView {
     public FoodItem getFoodItem() {
         return foodItem;
     }
-    
+
 
     public void setNonVisible() {
         frame.setVisible(false);
     }
-    
-	public void setVisible() {
-		frame.setVisible(false);
-	}
 
-    public void setTextFieldCommentFieldText(String s) {
-        commentField.setText(s);
+    public void setVisible() {
+        frame.setVisible(false);
     }
 }

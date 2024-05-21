@@ -4,15 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FactoryPage extends BaseView {
-    
-	private JFrame frame;
+
+    private JFrame frame;
     private JTextField textFieldName;
     private JTextField textFieldCategory;
     private JTextField textFieldDate;
     private JTextField textFieldOrigin;
     private JTextField textFieldPrice;
     private JButton buttonSubmit;
-    
+
     public FactoryPage() {
         this.frame = new JFrame("Factory Page");
         int width = 250;
@@ -53,7 +53,7 @@ public class FactoryPage extends BaseView {
 
         frame.setVisible(true);
     }
-    
+
     public JTextField getTextFieldName() { return textFieldName; }
     public JTextField getTextFieldCategory() { return textFieldCategory; }
     public JTextField getTextFieldDate() { return textFieldDate; }
@@ -61,27 +61,11 @@ public class FactoryPage extends BaseView {
     public JTextField getTextFieldPrice() { return textFieldPrice; }
     public JButton getButtonSubmit() { return buttonSubmit; }
 
-	public void setNonVisible() {
-		frame.setVisible(false);
-	}
-	
-	public void setVisible() {
-		frame.setVisible(false);
-	}
+    public void setNonVisible() {
+        frame.setVisible(false);
+    }
 
-    public void setTextFieldName(String name) {
-        textFieldName.setText(name);
-    }
-    public void setTextFieldCategory(String category) {
-        textFieldCategory.setText(category);
-    }
-    public void setTextFieldDate(String date) {
-        textFieldDate.setText(date);
-    }
-    public void setTextFieldOrigin(String origin) {
-        textFieldOrigin.setText(origin);
-    }
-    public void setTextFieldPrice(String price) {
-        textFieldPrice.setText(price);
+    public void setVisible() {
+        frame.setVisible(false);
     }
 }

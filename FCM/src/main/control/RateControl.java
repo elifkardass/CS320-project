@@ -10,11 +10,11 @@ import gui.RatePage;
 
 public class RateControl {
 
-	private RatePage ratePage;
-	private boolean isUpdated;
+    private RatePage ratePage;
+    private boolean isUpdated;
 
     public RateControl(RatePage ratePage) {
-    	this.ratePage = ratePage;
+        this.ratePage = ratePage;
 
         ratePage.getMainMenuButton().addActionListener(new ActionListener() {
             @Override
@@ -29,24 +29,24 @@ public class RateControl {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Submit
-            	isUpdated = updateFoodItemWithRateDetails();
+                isUpdated = updateFoodItemWithRateDetails();
 
-            	if (isUpdated) {
-            		String comment = ratePage.getFoodItem().getComment();
-            		String rating = ratePage.getFoodItem().getRating();
-            		System.out.println(comment + rating);
-            	}
+                if (isUpdated) {
+                    String comment = ratePage.getFoodItem().getComment();
+                    String rating = ratePage.getFoodItem().getRating();
+                    System.out.println(comment + rating);
+                }
 
             }
         });
         // Add other action listeners if necessary
     }
 
-    public boolean updateFoodItemWithRateDetails() {
-    	// Retrieve the comment and rating from the RatePage
-    	try {
+    private boolean updateFoodItemWithRateDetails() {
+        // Retrieve the comment and rating from the RatePage
+        try {
 
-    		String comment = ratePage.getTextFieldCommentField().getText();
+            String comment = ratePage.getTextFieldCommentField().getText();
             String rating = ratePage.getRatingDropdown().getSelectedItem().toString();
 
             validateStringField(comment, "Comment");
@@ -61,14 +61,15 @@ public class RateControl {
 
             return true;
 
-    	} catch (IllegalArgumentException ex) {
+        } catch (IllegalArgumentException ex) {
 
-    		JOptionPane.showMessageDialog(null, ex.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
             return false;
 
-    	}
+        }
 
     }
+
 
     private void validateStringField(String field, String fieldName) {
         if (field == null || field.trim().isEmpty()) {

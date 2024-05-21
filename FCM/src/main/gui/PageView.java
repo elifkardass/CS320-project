@@ -6,8 +6,8 @@ import javax.swing.JFrame;
 public interface PageView {
     void setVisible();
     void setNonVisible();
-    
-	public static final JFrame frame = new JFrame();
-	
-	JButton getButtonSubmit();
+
+    public static final JFrame frame = new JFrame();
+
+    JButton getButtonSubmit();
 }

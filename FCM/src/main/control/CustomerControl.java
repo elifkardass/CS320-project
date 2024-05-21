@@ -2,6 +2,7 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import app.FoodItem;
 import app.Main;
@@ -32,7 +33,12 @@ public class CustomerControl {
 				if (selectedFoodItem != null) {
 
 					PaymentPage paymentPage = new PaymentPage(selectedFoodItem, customerPage.getMainPage());
-					new PaymentControl(paymentPage);
+					try {
+						new PaymentControl(paymentPage);
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					customerPage.setNonVisible();
 				}
 			}
@@ -40,7 +46,7 @@ public class CustomerControl {
 
 	}
 
-	public FoodItem findFoodItemByName(String foodName) {
+	private FoodItem findFoodItemByName(String foodName) {
 		for (FoodItem foodItem : Main.foodList) { // Assuming foodList is accessible here
 			if (foodItem.getName().equals(foodName)) {
 				return foodItem;

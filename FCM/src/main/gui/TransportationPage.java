@@ -4,15 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class TransportationPage extends BaseView {
-    
-	private JFrame frame;
+
+    private JFrame frame;
     private JTextField textFieldCompanyName;
     private JTextField textFieldOfficeLocation;
     private JTextField textFieldFoodSource;
     private JTextField textFieldFoodDestination;
     private JTextField textFieldExpectedDeliveryDate;
     private JButton buttonSubmit;
-    
+
     public TransportationPage() {
         this.frame = new JFrame("Transporter Page");
         frame.setSize(300, 300);
@@ -54,19 +54,19 @@ public class TransportationPage extends BaseView {
 
         frame.setVisible(true);
     }
-    
+
     public JTextField getTextFieldCompanyName() { return textFieldCompanyName; }
     public JTextField getTextFieldOfficeLocation() { return textFieldOfficeLocation; }
     public JTextField getTextFieldFoodSource() { return textFieldFoodSource; }
     public JTextField getTextFieldFoodDestination() { return textFieldFoodDestination; }
     public JTextField getTextFieldExpectedDeliveryDate() { return textFieldExpectedDeliveryDate; }
     public JButton getButtonSubmit() { return buttonSubmit; }
-    
+
     public void  setNonVisible() {
-    	frame.setVisible(false);
+        frame.setVisible(false);
     }
-    
+
     public void  setVisible() {
-    	frame.setVisible(true);
+        frame.setVisible(true);
     }
 }

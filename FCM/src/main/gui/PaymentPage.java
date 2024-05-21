@@ -67,11 +67,4 @@ public class PaymentPage extends BaseView {
     public MainPage getMainPage() {
         return mainPage;
     }
-
-    public void setCardDetails(String s, String s1) {
-        textFieldCardNumber.setText(s);
-        passwordFieldCardPassword.setText(s1);
-
-
-    }
 }

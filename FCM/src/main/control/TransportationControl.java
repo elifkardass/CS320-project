@@ -29,18 +29,18 @@ public class TransportationControl {
 
                 // You can manage the next step (like opening the WarehousePage) 
                 // from the place where TransportationControl is instantiated.
-                
+
                 if (isUpdated()) {
                     WarehousePage warehousenPage = new WarehousePage();
                     new WarehouseControl(warehousenPage); // Add this line to bind
-                    
+
                     transportationPage.setNonVisible();
                 }
             }
         });
     }
 
-    public boolean updateFoodItemWithShippingDetails() {
+    private boolean updateFoodItemWithShippingDetails() {
         try {
             // Get values from text fields
             String transporterCompany = transportationPage.getTextFieldCompanyName().getText();

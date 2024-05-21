@@ -9,17 +9,17 @@ import java.util.List;
 import java.util.Vector;
 
 public class CustomerPage extends BaseView {
-	
-	private JFrame frame; // Declare frame as a class member
-	private JButton buttonMain;
-	private JButton buttonBuy;
-	private MainPage mainPage; // reference to mainPage
-	
+
+    private JFrame frame; // Declare frame as a class member
+    private JButton buttonMain;
+    private JButton buttonBuy;
+    private MainPage mainPage; // reference to mainPage
+
     private JComboBox<String> dropdownFoods;
 
     public CustomerPage(List<FoodItem> foodList, MainPage mainPage) {
-       	this.mainPage = mainPage;
-    	
+        this.mainPage = mainPage;
+
         // frame
         this.frame = new JFrame("Customer Page");
         int width = 450;
@@ -56,36 +56,35 @@ public class CustomerPage extends BaseView {
     }
 
     // Other methods and getters, if any
-    
+
     public JButton getButtonMain() {
-    	return buttonMain;
+        return buttonMain;
     }
-    
+
     public JButton getButtonSubmit() {
-    	return buttonBuy;
+        return buttonBuy;
     }
-    
- // Method to show the main page
+
+    // Method to show the main page
     public void showMainPage() {
         if (mainPage != null) {
             mainPage.setVisible();
         }
     }
-    
+
     public void setNonVisible() {
         frame.setVisible(false);
     }
-    
+
     public void setVisible() {
         frame.setVisible(false);
     }
-    
+
     public String getSelectedFoodItemName() {
         return dropdownFoods.getSelectedItem().toString();
     }
-    
+
     public MainPage getMainPage() {
         return mainPage;
     }
-
 }
