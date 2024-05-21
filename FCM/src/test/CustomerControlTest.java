@@ -1,27 +1,33 @@
-
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
-import app.*;
-import control.*;
-import gui.*;
+import app.FoodItem;
+import control.CustomerControl;
+import gui.CustomerPage;
+import gui.MainPage;
 
 class CustomerControlTest {
 
     CustomerControl customerControl;
     CustomerPage customerPage;
+    MainPage mainPage;
     List<FoodItem> testFoodList;
 
     @BeforeEach
     void setUp() {
+        // Create a test list of FoodItems
         testFoodList = new ArrayList<>();
         testFoodList.add(new FoodItem("Apple", "Fruit", "2025-12-31", "USA", 1.0));
-        Main.foodList = testFoodList; // Assigning the test list to the Main's foodList
 
-        customerPage = new CustomerPage(testFoodList,new MainPage()); // Assuming you have default constructor or setup method
+        // Create a MainPage instance for the CustomerPage constructor
+        mainPage = new MainPage();
+
+        // Create a CustomerPage instance with the test list and mainPage reference
+        customerPage = new CustomerPage(testFoodList, mainPage);
+
+        // Instantiate the CustomerControl with the CustomerPage
         customerControl = new CustomerControl(customerPage);
     }
 
@@ -37,23 +43,24 @@ class CustomerControlTest {
         FoodItem result = customerControl.findFoodItemByName("Banana");
         assertNull(result, "Food item should not be found.");
     }
-    // This test assumes you can simulate button clicks or the effects of them.
+
     @Test
     void testMainMenuButtonAction() {
         // Simulate the MainMenu button click
-        customerPage.getButtonMain().doClick(); // If you can simulate clicks
+        customerPage.getButtonMain().doClick();
         // Check if the CustomerPage is set to non-visible
-        assertFalse(customerPage.setVisible();, "Customer page should be set to non-visible after clicking Main menu.");
+        assertFalse(customerPage.isVisible(), "Customer page should be set to non-visible after clicking Main menu.");
     }
 
-    // Simulate the Submit button action when a valid food item is selected
     @Test
     void testSubmitButtonActionValidSelection() {
-        // Set up the CustomerPage to return a valid food name
+        // Set up the CustomerPage to select a valid food name
         customerPage.setSelectedFoodItemName("Apple");
+
         // Simulate the Submit button click
         customerPage.getButtonSubmit().doClick();
+
         // Check if the CustomerPage is set to non-visible
-        assertFalse(customerPage.setVisible();, "Customer page should be set to non-visible after submitting a valid food item.");
-}
+        assertFalse(customerPage.isVisible(), "Customer page should be set to non-visible after submitting a valid food item.");
+    }
 }

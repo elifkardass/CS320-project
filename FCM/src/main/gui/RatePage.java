@@ -107,6 +107,10 @@ public class RatePage extends BaseView {
         return mainMenuButton;
     }
 
+    public void setRatingDropdownSelection(String rating) {
+        ratingDropdown.setSelectedItem(Integer.parseInt(rating));
+    }
+
     // Other methods and getters
 
     public JTextField getTextFieldCommentField() { return commentField; }
@@ -132,5 +136,9 @@ public class RatePage extends BaseView {
 
     public void setVisible() {
         frame.setVisible(false);
+    }
+
+    public void setTextFieldCommentFieldText(String s) {
+        commentField.setText(s);
     }
 }

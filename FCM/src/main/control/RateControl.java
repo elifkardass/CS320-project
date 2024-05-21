@@ -42,7 +42,7 @@ public class RateControl {
         // Add other action listeners if necessary
     }
 
-    private boolean updateFoodItemWithRateDetails() {
+    public boolean updateFoodItemWithRateDetails() {
         // Retrieve the comment and rating from the RatePage
         try {
 

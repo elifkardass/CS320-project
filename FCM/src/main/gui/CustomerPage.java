@@ -1,5 +1,4 @@
 package gui;
-
 import javax.swing.*;
 
 import app.FoodItem;
@@ -20,14 +19,14 @@ public class CustomerPage extends BaseView {
     public CustomerPage(List<FoodItem> foodList, MainPage mainPage) {
         this.mainPage = mainPage;
 
-        // frame
+        // frame initialization
         this.frame = new JFrame("Customer Page");
         int width = 450;
         int height = 300;
         frame.setSize(width, height);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // mainPanel
+        // mainPanel initialization
         JPanel mainPanel = new JPanel();
         frame.add(mainPanel);
         mainPanel.setLayout(new FlowLayout());
@@ -39,7 +38,7 @@ public class CustomerPage extends BaseView {
         // Convert foodList to String array or Vector for JComboBox
         Vector<String> foodOptions = new Vector<>();
         for (FoodItem food : foodList) {
-            foodOptions.add(food.getName()); // Assuming FoodItem has a getName() method
+            foodOptions.add(food.getName());
         }
 
         dropdownFoods = new JComboBox<>(foodOptions);
@@ -55,8 +54,6 @@ public class CustomerPage extends BaseView {
         frame.setVisible(true);
     }
 
-    // Other methods and getters, if any
-
     public JButton getButtonMain() {
         return buttonMain;
     }
@@ -65,7 +62,6 @@ public class CustomerPage extends BaseView {
         return buttonBuy;
     }
 
-    // Method to show the main page
     public void showMainPage() {
         if (mainPage != null) {
             mainPage.setVisible();
@@ -77,14 +73,22 @@ public class CustomerPage extends BaseView {
     }
 
     public void setVisible() {
-        frame.setVisible(false);
+        frame.setVisible(true);
     }
 
     public String getSelectedFoodItemName() {
         return dropdownFoods.getSelectedItem().toString();
     }
 
+    public void setSelectedFoodItemName(String name) {
+        dropdownFoods.setSelectedItem(name);
+    }
+
     public MainPage getMainPage() {
         return mainPage;
+    }
+
+    public boolean isVisible() {
+        return frame.isVisible();
     }
 }
