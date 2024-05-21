@@ -70,7 +70,6 @@ public class RateControl {
 
     }
 
-
     private void validateStringField(String field, String fieldName) {
         if (field == null || field.trim().isEmpty()) {
             throw new IllegalArgumentException(fieldName + " cannot be empty.");

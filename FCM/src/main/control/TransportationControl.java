@@ -40,7 +40,7 @@ public class TransportationControl {
         });
     }
 
-    private boolean updateFoodItemWithShippingDetails() {
+    public boolean updateFoodItemWithShippingDetails() {
         try {
             // Get values from text fields
             String transporterCompany = transportationPage.getTextFieldCompanyName().getText();
@@ -93,7 +93,6 @@ public class TransportationControl {
         // Additional validation for date correctness can be added here
     }
 
-    // You may include other validation methods as needed
 
     public boolean isUpdated() {
         return isUpdated;

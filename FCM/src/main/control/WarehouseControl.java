@@ -35,7 +35,7 @@ public class WarehouseControl {
         });
     }
 
-    private boolean updateFoodItemWithWarehouseDetails() {
+    public boolean updateFoodItemWithWarehouseDetails() {
         try {
             // Get values from text fields
             String warehouseLocation = warehousePage.getTextFieldName().getText();
@@ -79,5 +79,4 @@ public class WarehouseControl {
         // Additional validation for date correctness can be added here
     }
 
-    // Add any additional methods or logic as needed
 }
