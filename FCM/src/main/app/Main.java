@@ -15,11 +15,7 @@ public class Main {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 MainPage mainPage = new MainPage(); // Create an instance of MainPage
-                try {
-                    new MainControl(mainPage); // Set up the control for the MainPage
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
+                new MainControl(mainPage); // Set up the control for the MainPage
             }
         });
     }

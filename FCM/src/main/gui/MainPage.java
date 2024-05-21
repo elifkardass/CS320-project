@@ -55,4 +55,8 @@ public class MainPage extends BaseView implements PageView {
         // Since no submit button, returns null
         return null;
     }
+
+    public boolean isNonVisible() {
+        return !frame.isVisible();
+    }
 }

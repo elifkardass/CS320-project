@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 import app.*;
 import control.*;
 import gui.*;
+
+import java.sql.SQLException;
+
 class PaymentControlTest {
 
     PaymentControl paymentControl;
@@ -19,7 +22,7 @@ class PaymentControlTest {
     }
 
     @Test
-    void testValidPaymentMethod() {
+    void testValidPaymentMethod() throws SQLException {
         // Kart detaylarının doğru verildiği durum
         paymentPage.setCardDetails("1234567890", "1234");
         paymentControl = new PaymentControl(paymentPage);
@@ -27,7 +30,7 @@ class PaymentControlTest {
     }
 
     @Test
-    void testInvalidPaymentMethod() {
+    void testInvalidPaymentMethod() throws SQLException {
         // Kart numarasının veya şifrenin yanlış verildiği durum
         paymentPage.setCardDetails("1234567890", "ErroredPAssword");
         assertFalse(paymentControl.checkPaymentMethod(paymentPage), "Payment should fail with incorrect details.");

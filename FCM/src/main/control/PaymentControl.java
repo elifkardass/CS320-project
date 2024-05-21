@@ -45,7 +45,7 @@ public class PaymentControl {
             }
         });
     }
-    private boolean checkPaymentMethod(PaymentPage paymentPage) throws SQLException {
+    public boolean checkPaymentMethod(PaymentPage paymentPage) throws SQLException {
 
 
 
